@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Number Operations</title>
+
+</head>
+<body>
+  <h2>Addition, Subtraction, Division, Multiplication, and Sum of Real Numbers</h2>
+  <label for="num1">Number 1:</label>
+  <input type="text" id="num1"><br><br>
+  <label for="num2">Number 2:</label>
+  <input type="text" id="num2"><br><br>
+  <button onclick="add()">Add</button>
+  <button onclick="subtract()">Subtract</button>
+  <button onclick="divide()">Divide</button>
+  <button onclick="multiply()">Multiply</button><br><br>
+  <div id="result"></div><br><br>
+  <div id="sumResult"></div>
+
+
+  <div class="findSum">
+<input type="tel" id="number"><br><br>
+<button id="getsum" onclick="sumOFn()">Get sum</button><br><br>
+your result is :<div id="resultofsum"></div>
+  </div>
+
+  <script>
+    // Function to perform addition
+    function add() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var result = num1 + num2;
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  
+    // Function to perform subtraction
+    function subtract() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var result = num1 - num2;
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  
+    // Function to perform division
+    function divide() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      if (num2 === 0) {
+        document.getElementById("result").innerHTML = "Cannot divide by zero";
+      } else {
+        var result = num1 / num2;
+        document.getElementById("result").innerHTML = "Result: " + result;
+      }
+    }
+  
+    // Function to perform multiplication
+    function multiply() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var result = num1 * num2;
+      document.getElementById("result").innerHTML = "Result: " + result;
+    }
+  
+
+  
+  function sumOFn(){
+    var num=parseInt(document.getElementById('number').value);
+    sum=0;
+    console.log(num);
+    for(var i=0;i<=num;i++){
+        sum+=i;
+        console.log(sum);
+    }
+    document.getElementById('resultofsum').innerText=sum
+  }
+  // Example usage
+  
+  </script>
+</body>
+</html>
