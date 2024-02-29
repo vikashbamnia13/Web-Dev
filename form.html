@@ -19,28 +19,55 @@
             background-color: rgb(0, 183, 255);
             color: blueviolet;
         }
-        .Btech{
+        form{
 
             border: 2px solid ;
             padding: 20px;
             margin: auto;
             width: 200px;
         }
+        button{
+            margin: 20px;
+        }
+        .hide{
+            display: none;
+        }
+        div{
+            margin: auto;
+            color: red;
+        }
     </style>
 </head>
 <body>
     <h1>FORM</h1>
     
-    <div class="Btech">
+    <form>
     <P>Name</P>
-    <input type="text" name="" id="" placeholder="Vikash">
-<p>gender</p>
-male <input type="radio" name="gender" id="male">
-female <input type="radio" name="gender" id="Female">
+    <input type="text" name="" id="name" placeholder="Enter Name here">
 <p>Roll no</p>
-<input type="number" name="" id=""placeholder="22001001136">
-<p>Password</p>
-<input type="text" name="" id="" placeholder="OHMFOO">
-</div>
+<input type="number" name="" id="RollNumber"placeholder="Enter roll number here">
+<button type="submit">SUBMIT</button>
+</form>
+<div class="error hide"></div>
+<script>
+   let form= document.querySelector('form');
+   let name=document.getElementById("name");
+   let rollnum=document.getElementById("RollNumber");
+   let error=document.querySelector(".error");
+   form.addEventListener("submit",(evt)=>{
+    evt.preventDefault();
+    error.classList.remove("hide")
+    console.log("form is submitted")
+    if(name.value===""){
+        error.innerHTML+="ERROR : write something in name <br>"
+        console.log("ERROR : write something in name")
+    }
+    if(rollnum.value/10000000000<1){
+        error.innerHTML+="ERROR : Your roll number should be more than 11 digit"
+        console.log("ERROR : Your roll number should be more than 11 digit")
+    }
+    
+   })
+</script>
 </body>
 </html>
